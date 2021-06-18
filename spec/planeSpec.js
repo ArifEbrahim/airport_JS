@@ -26,4 +26,5 @@ describe('Plane', function() {
     plane.takeOff();
     expect(function(){ plane.takeOff(); }).toThrowError('Warning: plane has already taken off');
   });
+
 });
