@@ -1,8 +1,9 @@
 'use strict'
 
 class Airport {
-  constructor(){
+  constructor(weather = new Weather()){
     this._hangar = []
+    this.weather = weather
   };
 
   planes() {
@@ -24,6 +25,6 @@ class Airport {
   };
 
   isStormy(){
-    return false;
+    this.weather.isStormy();
   };
 };
