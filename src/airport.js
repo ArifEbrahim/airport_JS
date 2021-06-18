@@ -1,9 +1,10 @@
 'use strict'
 
 class Airport {
-  constructor(weather = new Weather()){
-    this._hangar = []
-    this._weather = weather
+  constructor(weather = new Weather(), capacity = 20){
+    this._hangar = [];
+    this._weather = weather;
+    this._capacity = capacity;
   };
 
   planes() {
@@ -13,7 +14,7 @@ class Airport {
   clearForLanding(plane){
     if(this._weather.isStormy()) {
       throw new Error('cannot land during storm');
-    } else if (this._hangar.length === 20) {
+    } else if (this._hangar.length === this._capacity) {
       throw new Error('cannot land - airport full');
     };
     this._hangar.push(plane);

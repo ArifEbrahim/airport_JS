@@ -43,6 +43,18 @@ describe('Feature Test:', function() {
       };
       expect(function(){ plane.land(airport); }).toThrowError('cannot land - airport full');
     });
+
+    // As the system designer
+    // So that the software can be used for many different airports
+    // I would like a default airport capacity that can be overridden as appropriate
+
+    it('has a variable capacity', function() {
+      airport = new Airport(new Weather(),30)
+      for(let i = 0; i < 30; i++) {
+        plane.land(airport);
+      };
+      expect(function(){ plane.land(airport); }).toThrowError('cannot land - airport full');
+    });
   });
 
   describe('when stormy', function() {
