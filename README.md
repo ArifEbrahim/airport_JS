@@ -56,6 +56,10 @@ b747.takeOff();
 
 There is randomly generated weather and if it's stormy weather then planes will not be allowed to land or take off. An error message is generated in the console in both cases.
 
+#### Testing
+
+Testing was completed in Jasmine and all tests are passing. To view the tests, open the file "SpecRunner.html" in your web browser.
+
 ## User stories implemented
 
 The following user stories were implemented as part of this project:
