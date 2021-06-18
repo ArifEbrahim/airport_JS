@@ -3,7 +3,7 @@
 class Airport {
   constructor(weather = new Weather()){
     this._hangar = []
-    this.weather = weather
+    this._weather = weather
   };
 
   planes() {
@@ -11,20 +11,18 @@ class Airport {
   };
 
   clearForLanding(plane){
-    if(this.isStormy()) {
+    if(this._weather.isStormy()) {
       throw new Error('cannot land during storm');
+    } else if (this._hangar.length === 20) {
+      throw new Error('cannot land - airport full');
     };
     this._hangar.push(plane);
   };
 
   clearForTakeOff() {
-    if(this.isStormy()) {
+    if(this._weather.isStormy()) {
       throw new Error('cannot take off during storm');
     };
     this._hangar.pop();
-  };
-
-  isStormy(){
-    this.weather.isStormy();
   };
 };
