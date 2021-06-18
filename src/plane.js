@@ -11,6 +11,10 @@ class Plane {
   };
 
   takeOff(){
+    if (this._location === "air") {
+      throw new Error('Warning: plane has already taken off');
+    }
     this._location.clearForTakeOff();
+    this._location = "air";
   };
 };

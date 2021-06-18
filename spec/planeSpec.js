@@ -20,4 +20,10 @@ describe('Plane', function() {
     plane.takeOff();
     expect(airport.clearForTakeOff).toHaveBeenCalled();
   });
+
+  it('throws an error if instructed to take off whilst in the air', function() {
+    plane.land(airport);
+    plane.takeOff();
+    expect(function(){ plane.takeOff(); }).toThrowError('Warning: plane has already taken off');
+  });
 });

@@ -55,6 +55,12 @@ describe('Feature Test:', function() {
       };
       expect(function(){ plane.land(airport); }).toThrowError('cannot land - airport full');
     });
+
+    it('planes already flying cannot take off again', function () {
+      plane.land(airport);
+      plane.takeOff();
+      expect(function(){ plane.takeOff(); }).toThrowError('Warning: plane has already taken off');
+    });
   });
 
   describe('when stormy', function() {
