@@ -16,7 +16,7 @@
 
 In order to gain more practice writing Javascript, i revisited this exercise which was originally completed in Ruby [here](https://github.com/ArifEbrahim/airport_challenge).
 
-This allowed to be implement TDD, debugging, mocks/doubles & dependancy injection in another language. All 6 user user stories were completed but no edge case testing was done.
+This allowed to be implement TDD, debugging, mocks/doubles & dependancy injection in another language. All 6 user user stories were completed.
 
 ## How to use
 
@@ -58,7 +58,9 @@ There is randomly generated weather and if it's stormy weather then planes will 
 
 #### Testing
 
-Testing was completed in Jasmine and all tests are passing. To view the tests, open the file "SpecRunner.html" in your web browser.
+Testing was completed in Jasmine and all tests are passing. To view the tests, open the file "SpecRunner.html" in your web browser. A screenshot is included below.
+
+[tests](images/logo.png)
 
 ## User stories implemented
 
@@ -92,6 +94,9 @@ I want to prevent landing when weather is stormy
 
 ## Future work
 
-Add code to address edge cases as follows:
+The following edge cases have been solved:
+- planes that are in the air cannot take off again
+
+The following edge cases still need to be worked on:
 - planes can only take off from airports they are in
 - planes that are landed cannot land again and must be in an airport
