@@ -60,7 +60,7 @@ There is randomly generated weather and if it's stormy weather then planes will 
 
 Testing was completed in Jasmine and all tests are passing. To view the tests, open the file "SpecRunner.html" in your web browser. A screenshot is included below.
 
-(./images/tests.png)
+![tests](./images/tests.png)
 
 ## User stories implemented
 
