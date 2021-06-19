@@ -11,8 +11,25 @@ describe('Airport', function() {
    plane = jasmine.createSpyObj('plane', ['land']);
  });
 
- it('has no planes by default', function() {
-   expect(airport.planes()).toEqual([]);
+ describe('capacity', function(){
+  it('has no planes by default', function() {
+    expect(airport.planes()).toEqual([]);
+  });
+
+  it('has a default capacity', function() {
+    for(let i = 0; i < 20; i++) {
+      airport.clearForLanding(plane);
+    };
+    expect(function(){ airport.clearForLanding(plane); }).toThrowError('cannot land - airport full');
+  });
+  
+  it('has a variable capacity', function() {
+    airport = new Airport(weather,30)
+    for(let i = 0; i < 30; i++) {
+      airport.clearForLanding(plane);
+    };
+    expect(function(){ airport.clearForLanding(plane); }).toThrowError('cannot land - airport full');
+  });
  });
 
  describe('when not stormy', function() {
@@ -30,15 +47,6 @@ describe('Airport', function() {
    airport.clearForTakeOff(plane);
    expect(airport.planes()).not.toContain(plane)
   });
-
-  it('has a default capacity', function() {
-    for(let i = 0; i < 20; i++) {
-      airport.clearForLanding(plane);
-    };
-    expect(function(){ airport.clearForLanding(plane); }).toThrowError('cannot land - airport full');
-  });
-  
-
  });
 
   describe('under stormy conditions', function(){
